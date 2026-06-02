@@ -1,6 +1,10 @@
-def main():
-    print("Hello from solarcast-backend!")
+from fastapi import FastAPI
 
+app= FastAPI()
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def read_root():
+    return {
+        "status": "online",
+        "message": "¡Servidor de FastAPI corriendo correctamente!"
+    }
